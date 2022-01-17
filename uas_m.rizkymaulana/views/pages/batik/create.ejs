@@ -1,0 +1,39 @@
+<html>
+
+<head>
+    <title>Tambah Data</title>
+</head>
+<%- include ('../components/head') %>
+
+    <body>
+        <%- include ('../components/navbar') %>
+            <div class="container">
+                <h1>Tambah Batik</h1>
+                <form action="/batik" method="post">
+                    <!-- <div class="group-input">
+            <label>ID Batik </label>
+            <input type="text" name="id">
+        </div> -->
+                    <div class="group-input">
+                        <label>Nama Batik </label>
+                        <input type="text" name="nama">
+                    </div>
+                    <div class="group-input">
+                        <label>Harga Batik </label>
+                        <input type="text" name="harga">
+                    </div>
+                    <div class="group-input">
+                        <label>Password </label>
+                        <input type="text" name="password">
+                    </div>
+                    <div class="input-group">
+                        <label>Gambar</label>
+                        <input type="file" name="image">
+                    </div>
+                    <button type="submit">Tambah</button>
+                    <a href="/batik">Kembali</a>
+                </form>
+            </div>
+    </body>
+
+</html>

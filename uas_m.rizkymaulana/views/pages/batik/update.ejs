@@ -1,0 +1,39 @@
+<html>
+
+<head>
+    <title>Update Data</title>
+</head>
+<%- include ('../components/head') %>
+
+    <body>
+        <%- include ('../components/navbar') %>
+            <div class="container">
+                <h1>update Batik</h1>
+                <form method="post" action="/batik/update">
+                    <div class="group-input">
+                        <label>ID Batik database </label>
+                        <input type="text" name="_id" readonly value='<%= batik._id %>'>
+                    </div>
+                    <div class="group-input">
+                        <label>ID Batik </label>
+                        <input type="text" name="id" required value='<%= batik.id %>'>
+                    </div>
+                    <div class="group-input">
+                        <label>Nama Batik </label>
+                        <input type="text" name="nama" required value='<%= batik.nama %>'>
+                    </div>
+                    <div class="group-input">
+                        <label>Harga Batik </label>
+                        <input type="text" name="harga" required value='<%= batik.harga %>'>
+                    </div>
+                    <div class="group-input">
+                        <label>Password </label>
+                        <input type="text" name="password" required value='<%= batik.password %>'>
+                    </div>
+                    <button type="submit" value="submit">update</button>
+                    <a href="/batik">Kembali</a>
+                </form>
+            </div>
+    </body>
+
+</html>

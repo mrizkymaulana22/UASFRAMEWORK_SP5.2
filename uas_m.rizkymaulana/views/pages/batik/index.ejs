@@ -1,0 +1,55 @@
+<html lang="en">
+
+<head>
+    <title>Beranda Batik</title>
+    <link rel="stylesheet" href="/assets/style.css">
+    <%- include ('../components/head') %>
+</head>
+
+<body>
+    <%- include ('../components/navbar') %>
+        <!-- <a href="/batik/create">Tambah Data Batik</a> -->
+        <h1>Daftar Batik </h1>
+        <h3>Total Batik : <%= batik.length %>
+        </h3>
+        <div class="text-center my-4"> <a href="/batik/create" class="btn btn-warning">Tambah Batik</a>
+        </div>
+
+        <div class="row row-cols-1 row-cols-xs-2 row-cols-sm-2 row-cols-lg-4 g-3">
+            <% if (batik.length> 0) { %>
+                <% batik.forEach (function(batik){ %>
+
+                    <div class="col">
+                        <div class="card h-100 shadow-sm"> <img
+                                src="https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full//98/MTA-7169651/wirawan_batik_wirawan_batik_af1-0090_sutra_atbm_baron_pola_kain_batik_tulis_full02_td7ymf5v.jpg"
+                                class="card-img-top" alt="..." />
+                            <div class="card-body">
+                                <div class="clearfix mb-3"> <span
+                                        class="float-start badge rounded-pill bg-primary"></span> <span
+                                        class="float-end price-hp">
+                                        <%= batik.harga %>
+                                    </span> </div>
+                                <h5 class="card-title">
+                                    <%= batik.nama %>
+                                </h5>
+                                <div class="text-center my-4">
+                                    <a class="btn btn-success"
+                                        href="/batik/update/<%= batik._id %>/<%= batik.id %>/<%= batik.nama %>/<%= batik.harga %>/<%= batik.password %>">Update</a>
+                                    <a class="btn btn-danger" href="/batik/hapus/<%= batik._id %>">Hapus</a>
+                                    <a class="btn btn-warning" href="/batik/<%= batik._id %>">view</a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <% }); %>
+                        <% } else { %>
+                            <p>Data Batik Kosong</p>
+                            <% } %>
+
+        </div>
+
+        <%- include ('../components/footer') %>
+</body>
+
+</html>
